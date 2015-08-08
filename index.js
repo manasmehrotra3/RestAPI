@@ -12,18 +12,24 @@ var jsonParser = bodyParser.json();
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(request, response) {
+  response.render('index.html');
+});
+
 // POST /login gets urlencoded bodies
 app.post('/login', urlencodedParser, function (req, res) {
   if (!req.body) 
-  	return res.sendStatus(400);
+    return res.sendStatus(400);
   else {
-  	var username = req.body.username;
-  	var password = req.body.password;
-  	if ((username == 'Anthem') && (password == 'DGVLWP1S')) {
-  		res.send({result: req.body.username});
-  	}
-  	else
-  		return res.sendStatus(400)
+    var username = req.body.username;
+    var password = req.body.password;
+    if ((username == 'Anthem') && (password == 'DGVLWP1S')) {
+      res.send({result: req.body.username});
+    }
+    else
+      return res.sendStatus(400)
   }
 });
  

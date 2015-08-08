@@ -20,7 +20,7 @@ app.post('/login', urlencodedParser, function (req, res) {
   	var username = req.body.username;
   	var password = req.body.password;
   	if ((username == 'Anthem') && (password == 'DGVLWP1S')) {
-  		res.send('welcome, ' + req.body.username);
+  		res.send({result: req.body.username});
   	}
   	else
   		return res.sendStatus(400)

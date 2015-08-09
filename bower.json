@@ -6,7 +6,7 @@
     "Manas Mehrotra <manasmehrotra3@gmail.com>"
   ],
   "description": "REST API",
-  "main": "server.js",
+  "main": "index.js",
   "license": "MIT",
   "ignore": [
     "**/.*",

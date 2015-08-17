@@ -11,7 +11,7 @@ var jsonParser = bodyParser.json();
 
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-app.use(allowCrossDomain);
+
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
